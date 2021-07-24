@@ -1,5 +1,12 @@
+import React from 'react';
+
+import './styles/GlobalStyles.css';
+import Routes from './routes';
+
 function App() {
-  return (<h1>OLÁ MUNDO</h1>);
+  return (
+    <Routes />
+  );
 }
 
 export default App;
