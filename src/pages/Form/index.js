@@ -191,17 +191,17 @@ export default function Form() {
           <InputBlock>
           <label for="bio">Você participou de algum congressos no país? Se sim, indicar local, se houve
           apresentação de trabalho e se o congresso é ou não internacional. </label> 
-            <textarea name="bio" id="bio"></textarea>
+            <input name="bio" id="bio"></input>
           </InputBlock>
           <InputBlock>
           <label for="bio">Você participou de algum congresso no exterior? Se sim, indicar local e se
           houve apresentação de trabalho. </label> 
-            <textarea name="bio" id="bio"></textarea>
+            <input name="bio" id="bio"></input>
           </InputBlock>
           <InputBlock>
           <label for="bio">Você realizou algum estágio de pesquisa ou visita de pesquisa no exterior
           (incluindo sanduíche)? Se sim, indique o nome da universidade e o período. </label> 
-            <textarea name="bio" id="bio"></textarea>
+            <input name="bio" id="bio"></input>
           </InputBlock>
           <InputBlock>
           <label for="bio">Você tem algo a mais a declarar para a CCP - PPgSI? </label> 
