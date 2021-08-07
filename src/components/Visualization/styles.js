@@ -3,11 +3,11 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100vw;
   height: 100%;
-  grid-area: feedback;
-  display:flex;
+  grid-area: visualization;
+  min-height:100%;
 `;
 
-export const FormBox = styled.form`
+export const DataBox = styled.div`
   background: var(--color-box-base);
   max-width: 74rem;
   border-radius: .8rem;
@@ -20,7 +20,6 @@ export const FormBox = styled.form`
 
   p {
     text-align: justify;
-    padding: 2.4rem;
   }
 
   a {
@@ -67,48 +66,11 @@ export const FormBox = styled.form`
   }
 `;
 
-export const InputBlock = styled.div`
+export const TextBlock = styled.div`
   margin-top: 2.4rem;
-  position: relative;
   margin-bottom: 2rem;
-
-  label {
-    font-size: 1.4rem;
-    color: var(--color-text-complement);
-  }
-
-  input,
-  select,
-  textarea {
-    width: 100%;
-    height: 5.6rem;
-    margin-top: 0.8rem;
-    border-radius: 0.8rem;
-    background: var(--color-input-background);
-    border: 1px solid var(--color-line-in-white);
-    outline: 0;/*tira a seleção forte*/
-    padding: 0 1.6rem;
-    font: 1.6rem Archivo;
-  }
-
-  textarea{
-    padding: 1.2rem 1.6rem;
-    height: 16rem;
-    resize: vertical;
-  }
-
-  :focus-within::after {
-    content: "";
-
-    width: calc(100% - 3.2rem);
-    height: 2px;
-    background: var(--color-primary-light);
-
-    position: absolute; 
-    left: 1.6rem;
-    bottom: 0;
-  }
-
+  width: 100%;
+  
   @media(min-width:700px){
     margin-top: 0px;
   }
