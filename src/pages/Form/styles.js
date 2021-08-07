@@ -9,7 +9,6 @@ export const FormBox = styled.form`
   min-height: 100vh;
   background: var(--color-box-base);
   max-width: 74rem;
-  border-radius: .8rem;
   margin: -3.2rem auto 3.2rem;
   padding-top: 6.4rem;
 
@@ -27,8 +26,13 @@ export const FormBox = styled.form`
   }
 
   fieldset {
-    border:none;
+    border: none;
     padding: 0 2.4rem;
+  }
+
+  fieldset > p {
+    padding: 0rem 0rem 2.4rem 0rem;
+
   }
 
   legend {
@@ -58,7 +62,7 @@ export const FormBox = styled.form`
     justify-content: center;
     text-decoration: none;
     transition: 0.2s;
-    margin-top: 3.2rem;
+    margin: 3.2rem 0rem;
   }
 
   button:hover{
@@ -74,6 +78,7 @@ export const InputBlock = styled.div`
   label {
     font-size: 1.4rem;
     color: var(--color-text-complement);
+    text-align: justify;
   }
 
   input,
