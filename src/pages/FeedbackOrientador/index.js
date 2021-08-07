@@ -5,10 +5,10 @@ import FeedbackForm from '../../components/Feedback';
 import Visualization from '../../components/Visualization';
 
 export default function FeedbackOrientador() {
-  return(
+  return (
     <Container>
-    <Visualization/>
-    <FeedbackForm/>
+      <Visualization />
+      <FeedbackForm />
     </Container>
   )
 }

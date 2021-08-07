@@ -2,17 +2,17 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100vw;
-  height: 100%;
+  height: fit-content;
   grid-area: feedback;
-  display:flex;
+  display: flex;
 `;
 
 export const FormBox = styled.form`
+  height: auto;
   background: var(--color-box-base);
   max-width: 74rem;
-  border-radius: .8rem;
-  margin: -3.2rem auto 3.2rem;
-  padding-top: 6.4rem;
+  margin: 0rem auto 0rem;
+  padding-top: 3.2rem;
 
   h1 {
     text-align: center;
@@ -28,7 +28,7 @@ export const FormBox = styled.form`
   }
 
   fieldset {
-    border:none;
+    border: none;
     padding: 0 2.4rem;
   }
 
@@ -59,7 +59,7 @@ export const FormBox = styled.form`
     justify-content: center;
     text-decoration: none;
     transition: 0.2s;
-    margin-top: 3.2rem;
+    margin: 3.2rem 0rem;
   }
 
   button:hover{
@@ -104,7 +104,7 @@ export const InputBlock = styled.div`
     height: 2px;
     background: var(--color-primary-light);
 
-    position: absolute; 
+    position: absolute;
     left: 1.6rem;
     bottom: 0;
   }
@@ -113,6 +113,3 @@ export const InputBlock = styled.div`
     margin-top: 0px;
   }
 `;
-
-
-

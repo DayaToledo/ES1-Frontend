@@ -2,17 +2,18 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100vw;
-  height: 100%;
+  height: auto;
   grid-area: visualization;
-  min-height:100%;
+  display: flex;
 `;
 
 export const DataBox = styled.div`
   background: var(--color-box-base);
   max-width: 74rem;
-  border-radius: .8rem;
-  margin: -3.2rem auto 3.2rem;
+  margin: 0rem auto 0rem;
   padding-top: 6.4rem;
+  display: flex;
+  flex-direction: column;
 
   h1 {
     text-align: center;
@@ -22,13 +23,13 @@ export const DataBox = styled.div`
     text-align: justify;
   }
 
-  a {
-    text-decoration: none;
-  }
-
   fieldset {
     border:none;
     padding: 0 2.4rem;
+  }
+
+  fieldset >  p {
+    padding: 0rem;
   }
 
   legend {
@@ -43,34 +44,20 @@ export const DataBox = styled.div`
     padding-top: 2.4rem;
     border-bottom: 1px solid var(--color-line-in-white)
   }
-
-  button {
-    width: 100%;
-    height: 5.6rem;
-    background: var(--color-secondary);
-    color: var(--color-button-text);
-    border: 0;
-    border-radius: .8rem;
-    cursor: pointer;
-    font: 700 1.6rem Archivo;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: 0.2s;
-    margin-top: 3.2rem;
-  }
-
-  button:hover{
-    background: var(--color-secondary-dark);
-  }
 `;
 
 export const TextBlock = styled.div`
   margin-top: 2.4rem;
   margin-bottom: 2rem;
   width: 100%;
-  
+
+  h3 {
+    text-align: justify;
+    font-weight: 600;
+    font-size: 1.6rem;
+    margin: 3rem 0rem 1rem 0rem;
+  }
+
   @media(min-width:700px){
     margin-top: 0px;
   }
