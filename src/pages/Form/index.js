@@ -1,11 +1,27 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import formsApi from '../../services/forms';
 import { Container, FormBox, InputBlock } from './styles';
 
 export default function Form() {
+  const [email, setEmail] = useState('');
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    console.log("entrou")
+    try {
+      const response = await formsApi.create({email});
+
+      console.log(response);
+      if (response.status === 200)
+        console.log("Dados enviados com sucesso!")
+    } catch (error) {
+      console.log("Erro ao enviar os dados, por favor, tente novamente...");
+    }
+  }
+
   return (
     <Container>
-      <FormBox>
+      <FormBox onSubmit={handleSubmit}>
         <h1>Relatório Semestral de Aluno Regular</h1>
         <p>
           Ao enviar este relatório, o aluno declara serem verdadeiras todas as informações nele relatadas, incluindo aquelas relativas aos artigos atualmente submetidos (ainda em avaliação) ou aceitos para publicação, mas ainda não publicados. Em caso de solicitação por parte da CCP-PPgSI declaro ter todos os documentos necessários para comprovação das informações apresentadas.<br /><br />
@@ -17,35 +33,41 @@ export default function Form() {
 
         <fieldset>
           <InputBlock>
-            <label for="name">Email</label>
-            <input name="name" id="name" />
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              required
+            />
           </InputBlock>
         </fieldset>
 
         <fieldset>
           <legend>Dados gerais</legend>
           <InputBlock>
-            <label for="name">Nome do Aluno</label>
+            <label>Nome do Aluno</label>
             <input name="name" id="name" />
           </InputBlock>
           <InputBlock>
-            <label for="name">Nome do Orientador</label>
+            <label>Nome do Orientador</label>
             <input name="name" id="name" />
           </InputBlock>
           <InputBlock>
-            <label for="name">Número USP</label>
+            <label>Número USP</label>
             <input name="name" id="name" />
           </InputBlock>
           <InputBlock>
-            <label for="name">Link para o curriculum lattes.</label>
+            <label>Link para o curriculum lattes.</label>
             <input name="name" id="name" />
           </InputBlock>
           <InputBlock>
-            <label for="name">Data da última atualização do lattes</label>
+            <label>Data da última atualização do lattes</label>
             <input name="name" id="name" />
           </InputBlock>
           <InputBlock>
-            <label for="subject">Qual foi o resultado da avaliação do seu último relatório?</label>
+            <label>Qual foi o resultado da avaliação do seu último relatório?</label>
             <select name="subject" id="subject">
               <option value="">Selecione uma opção</option>
               <option value="">Aprovado</option>
@@ -55,7 +77,7 @@ export default function Form() {
             </select>
           </InputBlock>
           <InputBlock>
-            <label for="subject">Qual seu curso?</label>
+            <label>Qual seu curso?</label>
             <select name="subject" id="subject">
               <option value="">Selecione uma opção</option>
               <option value="">Mestrado</option>
@@ -63,7 +85,7 @@ export default function Form() {
             </select>
           </InputBlock>
           <InputBlock>
-            <label for="subject">Este relatório é referente a que semestre do seu curso? (último semestre concluído)?</label>
+            <label>Este relatório é referente a que semestre do seu curso? (último semestre concluído)?</label>
             <select name="subject" id="subject">
               <option value="">Selecione uma opção</option>
               <option value="">1º semestre do curso</option>
@@ -78,15 +100,15 @@ export default function Form() {
           </InputBlock>
           <InputBlock>
             <legend>Atividades Didáticas</legend>
-            <label for="name">Em quantas disciplinas obrigatórias você já obteve aprovação?</label>
+            <label>Em quantas disciplinas obrigatórias você já obteve aprovação?</label>
             <input name="name" id="name" />
           </InputBlock>
           <InputBlock>
-            <label for="name">Em quantas disciplinas optativas você já obteve aprovação?</label>
+            <label>Em quantas disciplinas optativas você já obteve aprovação?</label>
             <input name="name" id="name" />
           </InputBlock>
           <InputBlock>
-            <label for="subject">Todos os conceitos em disciplinas cursadas no último semestre já foram divulgados? Caso não, espere até 2 dias antes da data máxima definida no site
+            <label>Todos os conceitos em disciplinas cursadas no último semestre já foram divulgados? Caso não, espere até 2 dias antes da data máxima definida no site
               do PPgSI para enviar o seu relatório.</label>
             <select name="subject" id="subject">
               <option value="">Selecione uma opção</option>
@@ -95,7 +117,7 @@ export default function Form() {
             </select>
           </InputBlock>
           <InputBlock>
-            <label for="subject">Em quantas disciplinas você foi reprovado desde o início do mestrado/doutorado?</label>
+            <label>Em quantas disciplinas você foi reprovado desde o início do mestrado/doutorado?</label>
             <select name="subject" id="subject">
               <option value="">Selecione uma opção</option>
               <option value="">0</option>
@@ -104,7 +126,7 @@ export default function Form() {
             </select>
           </InputBlock>
           <InputBlock>
-            <label for="subject">Em quantas disciplinas você foi reprovado no último semestre cursado?</label>
+            <label>Em quantas disciplinas você foi reprovado no último semestre cursado?</label>
             <select name="subject" id="subject">
               <option value="">Selecione uma opção</option>
               <option value="">0</option>
@@ -114,7 +136,7 @@ export default function Form() {
             </select>
           </InputBlock>
           <InputBlock>
-            <label for="subject">Você já foi aprovado no exame de proficiência em idiomas?</label>
+            <label>Você já foi aprovado no exame de proficiência em idiomas?</label>
             <select name="subject" id="subject">
               <option value="">Selecione uma opção</option>
               <option value="">Sim</option>
@@ -123,7 +145,7 @@ export default function Form() {
           </InputBlock>
           <InputBlock>
             <legend>Atividades De Pesquisa</legend>
-            <label for="subject">Você já realizou o exame de qualificação?</label>
+            <label>Você já realizou o exame de qualificação?</label>
             <select name="subject" id="subject">
               <option value="">Selecione uma opção</option>
               <option value="">Sim.Fui Aprovado</option>
@@ -132,7 +154,7 @@ export default function Form() {
             </select>
           </InputBlock>
           <InputBlock>
-            <label for="subject">Se não qualificou, quanto tempo falta para o limite máximo de qualificação?</label>
+            <label>Se não qualificou, quanto tempo falta para o limite máximo de qualificação?</label>
             <select name="subject" id="subject">
               <option value="">Selecione uma opção</option>
               <option value="">Menos de 3 meses</option>
@@ -141,7 +163,7 @@ export default function Form() {
             </select>
           </InputBlock>
           <InputBlock>
-            <label for="subject">Se você já fez sua qualificação e foi aprovado, quanto tempo falta para o limite máximo do depósito da sua dissertação/tese?</label>
+            <label>Se você já fez sua qualificação e foi aprovado, quanto tempo falta para o limite máximo do depósito da sua dissertação/tese?</label>
             <select name="subject" id="subject">
               <option value="">Selecione uma opção</option>
               <option value="">Menos de 3 meses</option>
@@ -150,7 +172,7 @@ export default function Form() {
             </select>
           </InputBlock>
           <InputBlock>
-            <label for="subject">Quantos artigos referentes a sua pesquisa de mestrado/doutorado você teve aceitos ou publicados? (Obs: Você deve inserir os artigos publicados no seu
+            <label>Quantos artigos referentes a sua pesquisa de mestrado/doutorado você teve aceitos ou publicados? (Obs: Você deve inserir os artigos publicados no seu
               currículo Lattes)</label>
             <select name="subject" id="subject">
               <option value="">Selecione uma opção</option>
@@ -161,7 +183,7 @@ export default function Form() {
             </select>
           </InputBlock>
           <InputBlock>
-            <label for="subject">Quantos artigos você submeteu e ainda estão aguardando resposta?</label>
+            <label>Quantos artigos você submeteu e ainda estão aguardando resposta?</label>
             <select name="subject" id="subject">
               <option value="">Selecione uma opção</option>
               <option value="">0</option>
@@ -171,7 +193,7 @@ export default function Form() {
             </select>
           </InputBlock>
           <InputBlock>
-            <label for="subject">Você possui artigo em preparação para submissão? Qual o estágio dele?</label>
+            <label>Você possui artigo em preparação para submissão? Qual o estágio dele?</label>
             <select name="subject" id="subject">
               <option value="">Selecione uma opção</option>
               <option value="">Não possuo</option>
@@ -183,28 +205,28 @@ export default function Form() {
             </select>
           </InputBlock>
           <InputBlock>
-            <label for="bio">Qual o estágio atual de sua pesquisa? Apresente toda e qualquer atividade que
+            <label>Qual o estágio atual de sua pesquisa? Apresente toda e qualquer atividade que
               já tenha sido realizada no contexto de seu projeto de pesquisa (mesmo que
               ainda incompleta). Faça uma descrição detalhada.</label>
             <textarea name="bio" id="bio"></textarea>
           </InputBlock>
           <InputBlock>
-            <label for="bio">Você participou de algum congressos no país? Se sim, indicar local, se houve
+            <label>Você participou de algum congressos no país? Se sim, indicar local, se houve
               apresentação de trabalho e se o congresso é ou não internacional.</label>
             <input name="bio" id="bio"></input>
           </InputBlock>
           <InputBlock>
-            <label for="bio">Você participou de algum congresso no exterior? Se sim, indicar local e se
+            <label>Você participou de algum congresso no exterior? Se sim, indicar local e se
               houve apresentação de trabalho. </label>
             <input name="bio" id="bio"></input>
           </InputBlock>
           <InputBlock>
-            <label for="bio">Você realizou algum estágio de pesquisa ou visita de pesquisa no exterior
+            <label>Você realizou algum estágio de pesquisa ou visita de pesquisa no exterior
               (incluindo sanduíche)? Se sim, indique o nome da universidade e o período.</label>
             <input name="bio" id="bio"></input>
           </InputBlock>
           <InputBlock>
-            <label for="bio">Você tem algo a mais a declarar para a CCP - PPgSI?</label>
+            <label>Você tem algo a mais a declarar para a CCP - PPgSI?</label>
             <textarea name="bio" id="bio"></textarea>
           </InputBlock>
           <legend>Reavaliação do desempenho do orientando</legend>
@@ -234,11 +256,11 @@ export default function Form() {
             desempenho não deveria ter sido considerado “insatisfatório”.
           </p>
           <InputBlock>
-            <label for="bio">Comentários finais do ORIENTANDO sobre seu desempenho no último semestre, considerando o relatório reapresentado: </label>
+            <label>Comentários finais do ORIENTANDO sobre seu desempenho no último semestre, considerando o relatório reapresentado: </label>
             <textarea name="bio" id="bio"></textarea>
           </InputBlock>
 
-          <button type="submit" form="create-class">ENVIAR</button>
+          <button type="submit">ENVIAR</button>
         </fieldset>
       </FormBox>
     </Container>

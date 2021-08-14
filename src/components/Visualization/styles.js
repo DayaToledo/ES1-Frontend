@@ -10,6 +10,7 @@ export const Container = styled.div`
 export const DataBox = styled.div`
   background: var(--color-box-base);
   max-width: 74rem;
+  width: 100%;
   margin: 0rem auto 0rem;
   padding-top: 6.4rem;
   display: flex;
@@ -56,6 +57,18 @@ export const TextBlock = styled.div`
     font-weight: 600;
     font-size: 1.6rem;
     margin: 3rem 0rem 1rem 0rem;
+  }
+
+  select {
+    width: 100%;
+    height: 5.6rem;
+    margin-top: 0.8rem;
+    border-radius: 0.8rem;
+    background: var(--color-input-background);
+    border: 1px solid var(--color-line-in-white);
+    outline: 0;/*tira a seleção forte*/
+    padding: 0 1.6rem;
+    font: 1.6rem Archivo;
   }
 
   @media(min-width:700px){
