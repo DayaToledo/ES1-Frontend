@@ -4,6 +4,16 @@ import { Container, FormBox, InputBlock } from './styles';
 
 export default function Form() {
   const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [numberUsp, setNumberUsp] = useState('');
+  const [nameOrientador, setNameOrientador] = useState('');
+  const [linkLattes, setLinkLattes] = useState('');
+  const [dateLattes, setDateLattes] = useState('');
+  const [curso, setCurso] = useState('');
+  const [question1, setQuestion1] = useState('');
+  const [question2, setQuestion2] = useState('');
+  const [question3, setQuestion3] = useState('');
+  const [question4, setQuestion4] = useState('');
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -48,27 +58,57 @@ export default function Form() {
           <legend>Dados gerais</legend>
           <InputBlock>
             <label>Nome do Aluno</label>
-            <input name="name" id="name" />
+            <input
+              type="text"
+              name="name"
+              value={name}
+              onChange={e => setName(e.target.value)}
+            />
           </InputBlock>
           <InputBlock>
             <label>Nome do Orientador</label>
-            <input name="name" id="name" />
+            <input
+              type="text"
+              name="nameOrientador"
+              value={nameOrientador}
+              onChange={e => setNameOrientador(e.target.value)}
+            />
           </InputBlock>
           <InputBlock>
             <label>Número USP</label>
-            <input name="name" id="name" />
+            <input
+              type="text"
+              name="numberUsp"
+              value={numberUsp}
+              onChange={e => setNumberUsp(e.target.value)}
+            />
           </InputBlock>
           <InputBlock>
             <label>Link para o curriculum lattes.</label>
-            <input name="name" id="name" />
+            <input
+              type="text"
+              name="linkLattes"
+              value={linkLattes}
+              onChange={e => setLinkLattes(e.target.value)}
+            />
           </InputBlock>
           <InputBlock>
             <label>Data da última atualização do lattes</label>
-            <input name="name" id="name" />
+            <input
+              type="text"
+              name="dateLattes"
+              value={dateLattes}
+              onChange={e => setDateLattes(e.target.value)}
+            />
           </InputBlock>
           <InputBlock>
             <label>Qual foi o resultado da avaliação do seu último relatório?</label>
-            <select name="subject" id="subject">
+            <select
+              type="text"
+              name="question1"
+              value={question1}
+              onChange={e => setQuestion1(e.target.value)}
+            >
               <option value="">Selecione uma opção</option>
               <option value="">Aprovado</option>
               <option value="">Aprovado com ressalvas</option>
@@ -78,7 +118,12 @@ export default function Form() {
           </InputBlock>
           <InputBlock>
             <label>Qual seu curso?</label>
-            <select name="subject" id="subject">
+            <select
+              type="text"
+              name="curso"
+              value={curso}
+              onChange={e => setCurso(e.target.value)}
+            >
               <option value="">Selecione uma opção</option>
               <option value="">Mestrado</option>
               <option value="">Doutorado</option>
@@ -86,7 +131,12 @@ export default function Form() {
           </InputBlock>
           <InputBlock>
             <label>Este relatório é referente a que semestre do seu curso? (último semestre concluído)?</label>
-            <select name="subject" id="subject">
+            <select
+              type="text"
+              name="question2"
+              value={question2}
+              onChange={e => setQuestion2(e.target.value)}
+            >             
               <option value="">Selecione uma opção</option>
               <option value="">1º semestre do curso</option>
               <option value="">2º semestre do curso</option>
@@ -101,16 +151,31 @@ export default function Form() {
           <InputBlock>
             <legend>Atividades Didáticas</legend>
             <label>Em quantas disciplinas obrigatórias você já obteve aprovação?</label>
-            <input name="name" id="name" />
+            <input
+              type="text"
+              name="question3"
+              value={question3}
+              onChange={e => setQuestion3(e.target.value)}
+            />
           </InputBlock>
           <InputBlock>
             <label>Em quantas disciplinas optativas você já obteve aprovação?</label>
-            <input name="name" id="name" />
+            <input
+              type="text"
+              name="question4"
+              value={question4}
+              onChange={e => setQuestion4(e.target.value)}
+            />
           </InputBlock>
           <InputBlock>
             <label>Todos os conceitos em disciplinas cursadas no último semestre já foram divulgados? Caso não, espere até 2 dias antes da data máxima definida no site
               do PPgSI para enviar o seu relatório.</label>
-            <select name="subject" id="subject">
+              <select
+              type="text"
+              name="question5"
+              value={question5}
+              onChange={e => setQuestion5(e.target.value)}
+            >
               <option value="">Selecione uma opção</option>
               <option value="">Sim</option>
               <option value="">Não</option>
