@@ -5,6 +5,21 @@ import { Container, FormBox, InputBlock } from './styles';
 export default function Form() {
   const [email, setEmail] = useState('');
 
+  const [question6, setQuestion6] = useState('');
+  const [question7, setQuestion7] = useState('');
+  const [question8, setQuestion8] = useState('');
+  const [question9, setQuestion9] = useState('');
+  const [question10, setQuestion10] = useState('');
+  const [question11, setQuestion11] = useState('');
+  const [question12, setQuestion12] = useState('');
+  const [question13, setQuestion13] = useState('');
+  const [question14, setQuestion14] = useState('');
+  const [question15, setQuestion15] = useState('');
+  const [question16, setQuestion16] = useState('');
+  const [question17, setQuestion17] = useState('');
+  const [question18, setQuestion18] = useState('');
+  const [question19, setQuestion19] = useState('');
+  const [question20, setQuestion20] = useState('');
   async function handleSubmit(e) {
     e.preventDefault();
     console.log("entrou")
@@ -118,7 +133,11 @@ export default function Form() {
           </InputBlock>
           <InputBlock>
             <label>Em quantas disciplinas você foi reprovado desde o início do mestrado/doutorado?</label>
-            <select name="subject" id="subject">
+            <select 
+            name="subject"
+            id="subject"
+            value={question6}
+            onChange={e => setQuestion6(e.target.value)}>
               <option value="">Selecione uma opção</option>
               <option value="">0</option>
               <option value="">1</option>
@@ -127,7 +146,11 @@ export default function Form() {
           </InputBlock>
           <InputBlock>
             <label>Em quantas disciplinas você foi reprovado no último semestre cursado?</label>
-            <select name="subject" id="subject">
+            <select
+            name="subject" 
+            id="subject"
+            value={question7}
+            onChange={e => setQuestion7(e.target.value)}>
               <option value="">Selecione uma opção</option>
               <option value="">0</option>
               <option value="">1</option>
@@ -137,7 +160,11 @@ export default function Form() {
           </InputBlock>
           <InputBlock>
             <label>Você já foi aprovado no exame de proficiência em idiomas?</label>
-            <select name="subject" id="subject">
+            <select 
+            name="subject"
+            id="subject"
+            value={question8}
+            onChange={e => setQuestion8(e.target.value)}>
               <option value="">Selecione uma opção</option>
               <option value="">Sim</option>
               <option value="">Não</option>
@@ -146,7 +173,11 @@ export default function Form() {
           <InputBlock>
             <legend>Atividades De Pesquisa</legend>
             <label>Você já realizou o exame de qualificação?</label>
-            <select name="subject" id="subject">
+            <select 
+            name="subject"
+            id="subject"
+            value={question9}
+            onChange={e => setQuestion9(e.target.value)}>
               <option value="">Selecione uma opção</option>
               <option value="">Sim.Fui Aprovado</option>
               <option value="">Sim.Fui Reprovado</option>
@@ -155,7 +186,11 @@ export default function Form() {
           </InputBlock>
           <InputBlock>
             <label>Se não qualificou, quanto tempo falta para o limite máximo de qualificação?</label>
-            <select name="subject" id="subject">
+            <select 
+            name="subject"
+            id="subject"
+            value={question10}
+            onChange={e => setQuestion10(e.target.value)}>
               <option value="">Selecione uma opção</option>
               <option value="">Menos de 3 meses</option>
               <option value="">Entre 3 e 6 meses</option>
@@ -164,7 +199,11 @@ export default function Form() {
           </InputBlock>
           <InputBlock>
             <label>Se você já fez sua qualificação e foi aprovado, quanto tempo falta para o limite máximo do depósito da sua dissertação/tese?</label>
-            <select name="subject" id="subject">
+            <select
+            name="subject" 
+            id="subject"
+            value={question11}
+            onChange={e => setQuestion11(e.target.value)}>
               <option value="">Selecione uma opção</option>
               <option value="">Menos de 3 meses</option>
               <option value="">Entre 3 e 6 meses</option>
@@ -174,7 +213,11 @@ export default function Form() {
           <InputBlock>
             <label>Quantos artigos referentes a sua pesquisa de mestrado/doutorado você teve aceitos ou publicados? (Obs: Você deve inserir os artigos publicados no seu
               currículo Lattes)</label>
-            <select name="subject" id="subject">
+            <select 
+            name="subject" 
+            id="subject"
+            value={question12}
+            onChange={e => setQuestion12(e.target.value)}>
               <option value="">Selecione uma opção</option>
               <option value="">0</option>
               <option value="">1</option>
@@ -184,7 +227,11 @@ export default function Form() {
           </InputBlock>
           <InputBlock>
             <label>Quantos artigos você submeteu e ainda estão aguardando resposta?</label>
-            <select name="subject" id="subject">
+            <select 
+            name="subject"
+            id="subject"
+            value={question13}
+            onChange={e => setQuestion13(e.target.value)}>
               <option value="">Selecione uma opção</option>
               <option value="">0</option>
               <option value="">1</option>
@@ -194,7 +241,11 @@ export default function Form() {
           </InputBlock>
           <InputBlock>
             <label>Você possui artigo em preparação para submissão? Qual o estágio dele?</label>
-            <select name="subject" id="subject">
+            <select
+            name="subject"
+            id="subject"
+            value={question14}
+            onChange={e => setQuestion14(e.target.value)}>
               <option value="">Selecione uma opção</option>
               <option value="">Não possuo</option>
               <option value="">Experimentos em elaboração</option>
@@ -208,26 +259,52 @@ export default function Form() {
             <label>Qual o estágio atual de sua pesquisa? Apresente toda e qualquer atividade que
               já tenha sido realizada no contexto de seu projeto de pesquisa (mesmo que
               ainda incompleta). Faça uma descrição detalhada.</label>
-            <textarea name="bio" id="bio"></textarea>
+            <textarea 
+            name="bio"
+            id="bio"
+            value={question15}
+            onChange={e => setQuestion15(e.target.value)}
+            required>
+            </textarea>
           </InputBlock>
           <InputBlock>
             <label>Você participou de algum congressos no país? Se sim, indicar local, se houve
               apresentação de trabalho e se o congresso é ou não internacional.</label>
-            <input name="bio" id="bio"></input>
+            <input 
+            name="bio" 
+            id="bio"
+            value={question16}
+            onChange={e => setQuestion16(e.target.value)}>
+            </input>
           </InputBlock>
           <InputBlock>
             <label>Você participou de algum congresso no exterior? Se sim, indicar local e se
               houve apresentação de trabalho. </label>
-            <input name="bio" id="bio"></input>
+            <input
+            name="bio" 
+            id="bio"
+            value={question17}
+            onChange={e => setQuestion17(e.target.value)}>
+            </input>
           </InputBlock>
           <InputBlock>
             <label>Você realizou algum estágio de pesquisa ou visita de pesquisa no exterior
               (incluindo sanduíche)? Se sim, indique o nome da universidade e o período.</label>
-            <input name="bio" id="bio"></input>
+            <input 
+            name="bio" 
+            id="bio"
+            value={question18}
+            onChange={e => setQuestion18(e.target.value)}>
+            </input>
           </InputBlock>
           <InputBlock>
             <label>Você tem algo a mais a declarar para a CCP - PPgSI?</label>
-            <textarea name="bio" id="bio"></textarea>
+            <textarea 
+            name="bio"
+            id="bio"
+            value={question19}
+            onChange={e => setQuestion19(e.target.value)}>
+            </textarea>
           </InputBlock>
           <legend>Reavaliação do desempenho do orientando</legend>
           <p>
@@ -257,7 +334,12 @@ export default function Form() {
           </p>
           <InputBlock>
             <label>Comentários finais do ORIENTANDO sobre seu desempenho no último semestre, considerando o relatório reapresentado: </label>
-            <textarea name="bio" id="bio"></textarea>
+            <textarea 
+            name="bio"
+            id="bio"
+            value={question20}
+            onChange={e => setQuestion20(e.target.value)}> 
+            </textarea>
           </InputBlock>
 
           <button type="submit">ENVIAR</button>
