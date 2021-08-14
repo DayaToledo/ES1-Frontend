@@ -122,64 +122,77 @@ export default function Visualization() {
                 <h3>Em quantas disciplinas você foi reprovado desde o início do mestrado/doutorado?</h3>
                 <p>{data.form.question6}</p>
               </TextBlock>
+
+
+
+
+
+
+
+
+
               <TextBlock>
                 <h3>Em quantas disciplinas você foi reprovado no último semestre cursado?</h3>
-                <p>Bruna Anselmo</p>
+                <p>data.form.question7</p>
               </TextBlock>
               <TextBlock>
                 <h3>Você já foi aprovado no exame de proficiência em idiomas?</h3>
-                <p>Bruna Anselmo</p>
+                <p>data.form.question8</p>
               </TextBlock>
               <legend>Atividades De Pesquisa</legend>
               <TextBlock>
                 <h3>Você já realizou o exame de qualificação?</h3>
-                <p>Bruna Anselmo</p>
+                <p>data.form.question9</p>
               </TextBlock>
               <TextBlock>
                 <h3>Se não qualificou, quanto tempo falta para o limite máximo de qualificação?</h3>
-                <p>Bruna Anselmo</p>
+                <p>data.form.question10</p>
               </TextBlock>
               <TextBlock>
                 <h3>Se você já fez sua qualificação e foi aprovado, quanto tempo falta para o limite máximo do depósito da sua dissertação/tese?</h3>
-                <p>Bruna Anselmo</p>
+                <p>data.form.question11</p>
               </TextBlock>
               <TextBlock>
                 <h3>Quantos artigos referentes a sua pesquisa de mestrado/doutorado você teve aceitos ou publicados? (Obs: Você deve inserir os artigos publicados no seu
                   currículo Lattes)</h3>
-                <p>Bruna Anselmo</p>
+                <p>data.form.question12</p>
               </TextBlock>
               <TextBlock>
                 <h3>Quantos artigos você submeteu e ainda estão aguardando resposta?</h3>
-                <p>Bruna Anselmo</p>
+                <p>data.form.question13</p>
               </TextBlock>
               <TextBlock>
                 <h3>Você possui artigo em preparação para submissão? Qual o estágio dele?</h3>
-                <p>Bruna Anselmo</p>
+                <p>data.form.question14</p>
               </TextBlock>
               <TextBlock>
                 <h3>Qual o estágio atual de sua pesquisa? Apresente toda e qualquer atividade que
                   já tenha sido realizada no contexto de seu projeto de pesquisa (mesmo que
                   ainda incompleta). Faça uma descrição detalhada.</h3>
-                <p>Bruna Anselmo</p>
+                <p>data.form.question15</p>
               </TextBlock>
               <TextBlock>
                 <h3>Você participou de algum congressos no país? Se sim, indicar local, se houve
                   apresentação de trabalho e se o congresso é ou não internacional.</h3>
-                <p>Bruna Anselmo</p>
+                <p>data.form.question16</p>
               </TextBlock>
               <TextBlock>
                 <h3>Você participou de algum congresso no exterior? Se sim, indicar local e se
                   houve apresentação de trabalho. </h3>
-                <p>Bruna Anselmo</p>
+                <p>data.form.question17</p>
               </TextBlock>
               <TextBlock>
                 <h3>Você realizou algum estágio de pesquisa ou visita de pesquisa no exterior
                   (incluindo sanduíche)? Se sim, indique o nome da universidade e o período.</h3>
-                <p>Bruna Anselmo</p>
+                <p>data.form.question18</p>
               </TextBlock>
               <TextBlock>
                 <h3>Você tem algo a mais a declarar para a CCP - PPgSI?</h3>
-                <p>Bruna Anselmo</p>
+                <p>data.form.question19</p>
+              </TextBlock>
+              <TextBlock>
+                <h3>Comentários finais do ORIENTANDO sobre seu desempenho no último semestre, considerando o relatório reapresentado: </h3>
+                <p>data.form.question20</p>
               </TextBlock>
             </fieldset>
           ) : (
