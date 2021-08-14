@@ -74,53 +74,53 @@ export default function Visualization() {
               </TextBlock>
               <TextBlock>
                 <h3>Nome do Aluno</h3>
-                <p>Bruna Anselmo</p>
+                <p>{data.aluno.name}</p>
               </TextBlock>
               <TextBlock>
                 <h3>Nome do Orientador</h3>
-                <p>Bruna Anselmo</p>
+                <p>{data.aluno.nameOrientador}</p>
               </TextBlock>
               <TextBlock>
                 <h3>Número USP</h3>
-                <p>Bruna Anselmo</p>
+                <p>{data.aluno.numberUsp}</p>
               </TextBlock>
               <TextBlock>
                 <h3>Link para o curriculum lattes</h3>
-                <p>Bruna Anselmo</p>
+                <p>{data.aluno.linkLattes}</p>
               </TextBlock>
               <TextBlock>
                 <h3>Data da última atualização do lattes</h3>
-                <p>Bruna Anselmo</p>
+                <p>{data.aluno.dateLattes}</p>
               </TextBlock>
               <TextBlock>
                 <h3>Qual foi o resultado da avaliação do seu último relatório?</h3>
-                <p>Bruna Anselmo</p>
+                <p>{data.form.question1}</p>
               </TextBlock>
               <TextBlock>
                 <h3>Qual seu curso?</h3>
-                <p>Bruna Anselmo</p>
+                <p>{data.aluno.curso}</p>
               </TextBlock>
               <TextBlock>
                 <h3>Este relatório é referente a que semestre do seu curso? (último semestre concluído)?</h3>
-                <p>Bruna Anselmo</p>
+                <p>{data.form.question2}</p>
               </TextBlock>
               <legend>Atividades Didáticas</legend>
               <TextBlock>
                 <h3>Em quantas disciplinas obrigatórias você já obteve aprovação?</h3>
-                <p>Bruna Anselmo</p>
+                <p>{data.form.question3}</p>
               </TextBlock>
               <TextBlock>
                 <h3>Em quantas disciplinas optativas você já obteve aprovação?</h3>
-                <p>Bruna Anselmo</p>
+                <p>{data.form.question4}</p>
               </TextBlock>
               <TextBlock>
                 <h3>Todos os conceitos em disciplinas cursadas no último semestre já foram divulgados? Caso não, espere até 2 dias antes da data máxima definida no site
                   do PPgSI para enviar o seu relatório.</h3>
-                <p>Bruna Anselmo</p>
+                <p>{data.form.question5}</p>
               </TextBlock>
               <TextBlock>
                 <h3>Em quantas disciplinas você foi reprovado desde o início do mestrado/doutorado?</h3>
-                <p>Bruna Anselmo</p>
+                <p>{data.form.question6}</p>
               </TextBlock>
               <TextBlock>
                 <h3>Em quantas disciplinas você foi reprovado no último semestre cursado?</h3>
