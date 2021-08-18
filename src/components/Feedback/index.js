@@ -9,7 +9,6 @@ export default function Feedback() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log("entrou")
     try {
       const response = await feedbackApi.create({
         comment,
@@ -33,7 +32,7 @@ export default function Feedback() {
           <legend />
 
           <InputBlock>
-            <label for="subject">Indicação do orientador sobre o desempenho no último semestre</label>
+            <label>Indicação do orientador sobre o desempenho no último semestre</label>
             <select
               name="evaluation"
               value={evaluation}
@@ -47,7 +46,7 @@ export default function Feedback() {
           </InputBlock>
 
           <InputBlock>
-            <label for="bio">Comentários sobre o desempenho do orientando no último semestre </label>
+            <label>Comentários sobre o desempenho do orientando no último semestre </label>
             <textarea
               name="comment"
               value={comment}

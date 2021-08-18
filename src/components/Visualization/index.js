@@ -58,8 +58,8 @@ export default function Visualization() {
               onChange={e => setName(e.target.value)}
             >
               <option value="">Selecione um aluno</option>
-              {items.map((item) => (
-                <option value={item.name}>{item.name}</option>
+              {items.map((item, index) => (
+                <option value={item.name} key={index}>{item.name}</option>
               ))}
             </select>
           </TextBlock>

@@ -34,7 +34,6 @@ export default function Form() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log("entrou")
     try {
       const date = moment(dateLattes, "DD/MM/YYYY").format();
       const response = await formsApi.create({
@@ -100,7 +99,7 @@ export default function Form() {
           <InputBlock>
             <label>Número USP</label>
             <input
-              type="text"
+              type="number"
               name="numberUsp"
               value={numberUsp}
               onChange={e => setNumberUsp(e.target.value)}
@@ -127,7 +126,6 @@ export default function Form() {
           <InputBlock>
             <label>Qual foi o resultado da avaliação do seu último relatório?</label>
             <select
-              type="text"
               name="question1"
               value={question1}
               onChange={e => setQuestion1(e.target.value)}
@@ -142,7 +140,6 @@ export default function Form() {
           <InputBlock>
             <label>Qual seu curso?</label>
             <select
-              type="text"
               name="curso"
               value={curso}
               onChange={e => setCurso(e.target.value)}
@@ -155,7 +152,6 @@ export default function Form() {
           <InputBlock>
             <label>Este relatório é referente a que semestre do seu curso? (último semestre concluído)?</label>
             <select
-              type="text"
               name="question2"
               value={question2}
               onChange={e => setQuestion2(e.target.value)}
@@ -194,7 +190,6 @@ export default function Form() {
             <label>Todos os conceitos em disciplinas cursadas no último semestre já foram divulgados? Caso não, espere até 2 dias antes da data máxima definida no site
               do PPgSI para enviar o seu relatório.</label>
             <select
-              type="text"
               name="question5"
               value={question5}
               onChange={e => setQuestion5(e.target.value)}
@@ -207,8 +202,7 @@ export default function Form() {
           <InputBlock>
             <label>Em quantas disciplinas você foi reprovado desde o início do mestrado/doutorado?</label>
             <select
-              name="subject"
-              id="subject"
+              name="question6"
               value={question6}
               onChange={e => setQuestion6(e.target.value)}>
               <option value="">Selecione uma opção</option>
@@ -220,8 +214,7 @@ export default function Form() {
           <InputBlock>
             <label>Em quantas disciplinas você foi reprovado no último semestre cursado?</label>
             <select
-              name="subject"
-              id="subject"
+              name="question7"
               value={question7}
               onChange={e => setQuestion7(e.target.value)}>
               <option value="">Selecione uma opção</option>
@@ -234,8 +227,7 @@ export default function Form() {
           <InputBlock>
             <label>Você já foi aprovado no exame de proficiência em idiomas?</label>
             <select
-              name="subject"
-              id="subject"
+              name="question8"
               value={question8}
               onChange={e => setQuestion8(e.target.value)}>
               <option value="">Selecione uma opção</option>
@@ -247,8 +239,7 @@ export default function Form() {
             <legend>Atividades De Pesquisa</legend>
             <label>Você já realizou o exame de qualificação?</label>
             <select
-              name="subject"
-              id="subject"
+              name="question9"
               value={question9}
               onChange={e => setQuestion9(e.target.value)}>
               <option value="">Selecione uma opção</option>
@@ -260,8 +251,7 @@ export default function Form() {
           <InputBlock>
             <label>Se não qualificou, quanto tempo falta para o limite máximo de qualificação?</label>
             <select
-              name="subject"
-              id="subject"
+              name="question10"
               value={question10}
               onChange={e => setQuestion10(e.target.value)}>
               <option value="">Selecione uma opção</option>
@@ -273,8 +263,7 @@ export default function Form() {
           <InputBlock>
             <label>Se você já fez sua qualificação e foi aprovado, quanto tempo falta para o limite máximo do depósito da sua dissertação/tese?</label>
             <select
-              name="subject"
-              id="subject"
+              name="question11"
               value={question11}
               onChange={e => setQuestion11(e.target.value)}>
               <option value="">Selecione uma opção</option>
@@ -287,8 +276,7 @@ export default function Form() {
             <label>Quantos artigos referentes a sua pesquisa de mestrado/doutorado você teve aceitos ou publicados? (Obs: Você deve inserir os artigos publicados no seu
               currículo Lattes)</label>
             <select
-              name="subject"
-              id="subject"
+              name="question12"
               value={question12}
               onChange={e => setQuestion12(e.target.value)}>
               <option value="">Selecione uma opção</option>
@@ -301,8 +289,7 @@ export default function Form() {
           <InputBlock>
             <label>Quantos artigos você submeteu e ainda estão aguardando resposta?</label>
             <select
-              name="subject"
-              id="subject"
+              name="question13"
               value={question13}
               onChange={e => setQuestion13(e.target.value)}>
               <option value="">Selecione uma opção</option>
@@ -315,8 +302,7 @@ export default function Form() {
           <InputBlock>
             <label>Você possui artigo em preparação para submissão? Qual o estágio dele?</label>
             <select
-              name="subject"
-              id="subject"
+              name="question14"
               value={question14}
               onChange={e => setQuestion14(e.target.value)}>
               <option value="">Selecione uma opção</option>
@@ -333,8 +319,7 @@ export default function Form() {
               já tenha sido realizada no contexto de seu projeto de pesquisa (mesmo que
               ainda incompleta). Faça uma descrição detalhada.</label>
             <textarea
-              name="bio"
-              id="bio"
+              name="question15"
               value={question15}
               onChange={e => setQuestion15(e.target.value)}>
             </textarea>
@@ -343,8 +328,7 @@ export default function Form() {
             <label>Você participou de algum congressos no país? Se sim, indicar local, se houve
               apresentação de trabalho e se o congresso é ou não internacional.</label>
             <input
-              name="bio"
-              id="bio"
+              name="question16"
               value={question16}
               onChange={e => setQuestion16(e.target.value)}>
             </input>
@@ -353,8 +337,7 @@ export default function Form() {
             <label>Você participou de algum congresso no exterior? Se sim, indicar local e se
               houve apresentação de trabalho. </label>
             <input
-              name="bio"
-              id="bio"
+              name="question17"
               value={question17}
               onChange={e => setQuestion17(e.target.value)}>
             </input>
@@ -363,8 +346,7 @@ export default function Form() {
             <label>Você realizou algum estágio de pesquisa ou visita de pesquisa no exterior
               (incluindo sanduíche)? Se sim, indique o nome da universidade e o período.</label>
             <input
-              name="bio"
-              id="bio"
+              name="question18"
               value={question18}
               onChange={e => setQuestion18(e.target.value)}>
             </input>
@@ -372,8 +354,7 @@ export default function Form() {
           <InputBlock>
             <label>Você tem algo a mais a declarar para a CCP - PPgSI?</label>
             <textarea
-              name="bio"
-              id="bio"
+              name="question19"
               value={question19}
               onChange={e => setQuestion19(e.target.value)}>
             </textarea>
@@ -407,8 +388,7 @@ export default function Form() {
           <InputBlock>
             <label>Comentários finais do ORIENTANDO sobre seu desempenho no último semestre, considerando o relatório reapresentado: </label>
             <textarea
-              name="bio"
-              id="bio"
+              name="question20"
               value={question20}
               onChange={e => setQuestion20(e.target.value)}>
             </textarea>
