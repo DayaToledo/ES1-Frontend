@@ -3,9 +3,13 @@ import React from 'react';
 import './styles/GlobalStyles.css';
 import Routes from './routes';
 
+import FeedbackProvider from './context/feedbackContext';
+
 function App() {
   return (
-    <Routes />
+    <FeedbackProvider>
+      <Routes />
+    </FeedbackProvider>
   );
 }
 

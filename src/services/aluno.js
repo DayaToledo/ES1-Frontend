@@ -1,7 +1,7 @@
 import api from './api';
 
 const alunoApi = {
-  read: () => api.get('/queryAll/aluno'),
+  read: () => api.get('/read/aluno'),
 }
 
 export default alunoApi;

@@ -2,18 +2,36 @@ import React, { useState } from 'react';
 import feedbackApi from '../../services/feedback';
 
 import { Container, FormBox, InputBlock } from './styles';
+import { useFeedback } from '../../context/feedbackContext';
 
 export default function Feedback() {
+  const { isCoordenador, nameAluno } = useFeedback();
+
   const [comment, setComment] = useState('');
   const [evaluation, setEvaluation] = useState('');
 
   async function handleSubmit(e) {
     e.preventDefault();
+    let response;
     try {
-      const response = await feedbackApi.create({
-        comment,
-        evaluation
-      });
+      console.log(isCoordenador);
+      if (isCoordenador) {
+        response = await feedbackApi.create({
+          comment,
+          evaluation,
+          nameCoordenador: "Bruna",
+          nameAluno,
+          email: "bruba@gmail.com"
+        });
+      } else {
+        response = await feedbackApi.create({
+          comment,
+          evaluation,
+          nameOrientador: "Loren",
+          nameAluno: "Dayana",
+          email: "loren@gmail"
+        });
+      }
 
       console.log(response);
       if (response.status === 200)

@@ -3,8 +3,11 @@ import moment from 'moment';
 import formsApi from '../../services/forms';
 import alunoApi from '../../services/aluno';
 import { Container, DataBox, TextBlock } from './styles';
+import { useFeedback } from '../../context/feedbackContext';
 
 export default function Visualization() {
+  const { defineNameAluno } = useFeedback();
+
   const [items, setItems] = useState([]);
   const [name, setName] = useState("");
   const [data, setData] = useState([]);
@@ -29,6 +32,8 @@ export default function Visualization() {
         if (name === "") setData([]);
 
         if (name !== "" && name !== undefined && name !== null) {
+          defineNameAluno(name);
+
           const response = await formsApi.read({ name });
 
           console.log(response);
