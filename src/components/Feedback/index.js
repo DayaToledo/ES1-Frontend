@@ -9,6 +9,8 @@ export default function Feedback() {
 
   const [comment, setComment] = useState('');
   const [evaluation, setEvaluation] = useState('');
+  const [nameCompleto, setNameCompleto] = useState('');
+  const [email, setEmail] = useState('');
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -19,17 +21,17 @@ export default function Feedback() {
         response = await feedbackApi.create({
           comment,
           evaluation,
-          nameCoordenador: "Bruna",
+          nameCoordenador: nameCompleto,
           nameAluno,
-          email: "bruba@gmail.com"
+          email
         });
       } else {
         response = await feedbackApi.create({
           comment,
           evaluation,
-          nameOrientador: "Loren",
-          nameAluno: "Dayana",
-          email: "loren@gmail"
+          nameOrientador: nameCompleto,
+          nameAluno,
+          email
         });
       }
 
@@ -48,6 +50,22 @@ export default function Feedback() {
 
         <fieldset>
           <legend />
+          <InputBlock>
+            <label>Nome Completo </label>
+            <input
+              name="nameCompleto"
+              value={nameCompleto}
+              onChange={e => setNameCompleto(e.target.value)}/>    
+          </InputBlock>
+
+          <InputBlock>
+            <label>Email </label>
+            <input
+              name="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}/>    
+          </InputBlock>
+
 
           <InputBlock>
             <label>Indicação do orientador sobre o desempenho no último semestre</label>

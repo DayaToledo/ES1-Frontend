@@ -14,8 +14,8 @@ function FeedbackProvider({children}) {
       setIsCoordenador(false);
     }
 
-    function defineNameAluno() {
-      setNameAluno(false);
+    function defineNameAluno(name) {
+      setNameAluno(name);
     }
 
     return(
