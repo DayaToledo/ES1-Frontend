@@ -4,7 +4,7 @@ const FeedbackContext = createContext({});
 
 function FeedbackProvider({children}) {
     const [isCoordenador, setIsCoordenador] = useState(false);
-    const [nameAluno, setNameAluno] = useState(false);
+    const [nameAluno, setNameAluno] = useState("");
 
     function defineCoordenador() {
       setIsCoordenador(true);
@@ -14,8 +14,8 @@ function FeedbackProvider({children}) {
       setIsCoordenador(false);
     }
 
-    function defineNameAluno() {
-      setNameAluno(false);
+    function defineNameAluno(name) {
+      setNameAluno(name);
     }
 
     return(
